@@ -17,7 +17,8 @@ let name, a_id;
 bal.addEventListener("click",()=>{
     
     if(name === undefined || a_id === undefined){
-        createObj();
+        console.log("hii")
+        createObj(1);
    }
     
    putBalance.innerHTML = "Balance: "+ accountObj.getBalance()
@@ -29,10 +30,11 @@ bal.addEventListener("click",()=>{
 let damount= document.querySelector(".dAmount ");
 damount.addEventListener("click",()=>{
     if(name === undefined || a_id === undefined){
-        createObj();
+        createObj(2);
        }
     
-      let da = +(<HTMLInputElement>document.querySelector("#deposit")).value; 
+      let da = +(<HTMLInputElement>document.querySelector("#deposit")).value;
+      accountObj.deposit(da); 
 })
 
 
@@ -41,7 +43,7 @@ let wamount= document.querySelector(".wAmount");
 wamount.addEventListener("click",()=>{
 
     if(name === undefined || a_id === undefined){
-        createObj();
+        createObj(3);
        }
     
     let wa = +(<HTMLInputElement>document.querySelector("#Withdraw")).value; 
@@ -50,9 +52,11 @@ wamount.addEventListener("click",()=>{
     }
 })
 
-function createObj(){
+function createObj(num){
     name = (<HTMLInputElement>document.getElementById("_name")).value;
     a_id = +(<HTMLInputElement>document.getElementById("a_id")).value;
+    console.log(name);
+    console.log(a_id);
     i++;
     let obj:customerData={
         ID:i,
@@ -66,8 +70,20 @@ function createObj(){
     }
     customer = new Customer(obj);
     accountObj = new Accounts(obj3,obj,customer);
+    if(num ===1){
     putBalance.innerHTML = "Balance: "+ accountObj.getBalance()
     ele.append(putBalance);
+    }
+    else if(num ===2){
+        let da = +(<HTMLInputElement>document.querySelector("#deposit")).value;
+        accountObj.deposit(da);
+    }
+    else if(num===3){
+        let wa = +(<HTMLInputElement>document.querySelector("#Withdraw")).value; 
+        if(accountObj.withdraw(wa) === -1){
+            alert("Withdraw amount exceeds the current balance.");
+        }
+    }
 }
 
 let k = document.getElementById("gInvoice")
