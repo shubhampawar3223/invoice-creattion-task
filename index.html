@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Maker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
+    <style>
+        body{
+          background-color: #ebc0da;
+        }
+    </style>
+</head>
+<body>
+    <div class="main container">
+    
+        <div class="  pt-2 col-12 ">
+        <div class="row">
+            <div class="col-12 col-lg-6 col-xl-6 border border-dark form-group accountElement">
+                <h3 class="text-center pt-2">Account Info</h3>
+                <div class="pb-3">
+                    <label for="a_id">Enter Account No</label>
+                    <input type="text" class="form-control " id=a_id placeholder="Enter Account No." > 
+                 </div>
+                <div class="pb-3">
+                   <label for="_name">Name</label>
+                   <input type="text" class="form-control" id="_name" placeholder="Enter Name" > 
+                </div>
+                <div class="pb-3 cb">    
+                    <button class="btn btn-primary checkBalance ">Click Here To Check Balance</button>
+                </div>
+                <div class="pb-3">
+                    <input type="text" class="form-control" id="deposit" placeholder="Enter Amount" >
+                    <div class="pt-3">
+                    <button class="btn btn-primary dAmount ">Deposit Amount</button>
+                    </div>  
+                </div>
+                <div class="pb-3">
+                    <input type="text" class="form-control" id="Withdraw" placeholder="Enter Amount" >
+                    <div class="pt-3">
+                        <button class="btn btn-primary wAmount ">Withdraw Amount</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-6 ">
+                <div class="border border-dark pt-2 col-12">
+                    <h3 class="text-center">Customer Info</h3>
+                    <form class="form-group">
+                        <div>
+                        <div >
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control">
+                        </div>
+                        <div class="pt-3" >
+                            <label for="discount">Discount Applied</label>
+                            <input type="text" id="discount" class="form-control">
+                        </div>
+                        <div class="pt-3">
+                            <label for="amount">Amount without Discount</label>
+                            <input type="text" id="amount" class="form-control">
+                        </div>
+                    </div >
+                    </form>
+            
+                    <div class="pb-3">
+                    <button class="btn btn-primary btn-block" id="gInvoice">Generate Invoice</button>
+                   </div>
+                </div>
+
+            </div>
+        </div>
+    </div>    
+</div>
+    <script src="./public/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
